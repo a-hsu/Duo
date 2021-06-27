@@ -11,3 +11,7 @@ web-build/
 
 # macOS
 .DS_Store
+server/config.js
+server/db/graphql/resolvers/users.js
+server/mongooseConfig.js
+package-lock.json
