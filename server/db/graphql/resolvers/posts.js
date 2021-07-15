@@ -40,7 +40,6 @@ module.exports = {
             //get token, decrypt, and then
             //mistake: adding authentication middleware as middleware for express itself
             const user = checkAuth(context)
-            console.log("user>>>>", user)
             const newPost = new Post({
                 body,
                 user: user.id,
@@ -83,5 +82,24 @@ module.exports = {
                 return post
             } else throw new UserInputError("Post not found")
         },
+        // async assignUserToPost(_, { postId, userId }, context) {
+        //     const { username } = checkAuth(context)
+        //     const post = await Post.findById(postId)
+        //     if (post) {
+        //         if (post.likes.find(like => like.username === username)) {
+        //             //post already liked, unlike it
+        //             post.likes = post.likes.filter(
+        //                 like => like.username !== username
+        //             )
+        //         } else {
+        //             post.likes.push({
+        //                 username,
+        //                 createdAt: new Date().toISOString(),
+        //             })
+        //         }
+        //         await post.save()
+        //         return post
+        //     } else throw new UserInputError("Post not found")
+        // },
     },
 }

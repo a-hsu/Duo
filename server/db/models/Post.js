@@ -4,6 +4,10 @@ const postSchema = new Schema({
     username: String,
     body: String,
     createdAt: String,
+    location: String,
+    duration: String,
+    time: String,
+    assignedUser: String,
     comments: [
         {
             body: String,

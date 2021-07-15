@@ -7,6 +7,7 @@ module.exports = gql`
         token: String!
         username: String!
         createdAt: String!
+        isAssigned:Boolean!
         posts: [Post]!
     }
     type Post {
@@ -14,7 +15,10 @@ module.exports = gql`
         body: String!
         createdAt: String
         username: String!
-        assignedUser: User
+        # location: String!
+        # duration: String!
+        # time: String!
+        # assignedUser: ID
         comments: [Comment]!
         likes: [Like]!
     }
@@ -40,6 +44,7 @@ module.exports = gql`
         getPost(postId: ID!): Post
         getLikes(postId: ID!): Int!
         getUsers: [User]
+        getLoggedInUser(userId: ID!): User!
     }
     type Mutation {
         register(registerInput: RegisterInput): User!

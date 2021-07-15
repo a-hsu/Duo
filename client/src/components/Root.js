@@ -41,12 +41,14 @@ export default function Root() {
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.container}>
-                            <Text style={styles.item}>{item.username}</Text>
-                            <Text>{item.body}</Text>
+                            <Text style={styles.item}>
+                                {item.username}: {item.body}
+                            </Text>
+                            {/* <Text style={styles.item}></Text> */}
                         </View>
                     )
                 }}
-            ></FlatList>
+            />
             <StatusBar style="auto" />
         </View>
     )
